@@ -1,0 +1,9 @@
+{
+    "python.terminal.activateEnvironment": true,
+    //"python.terminal.activateEnvInCurrentTerminal": true,
+    //"python.pythonPath": "~/venv/bin/python",
+    "python.pythonPath": "env\\Scripts\\python.exe",
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "autopep8",
+    "python.terminal.activateEnvInCurrentTerminal": true
+}

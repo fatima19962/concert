@@ -1,0 +1,96 @@
+
+{% extends "ticketSales/layout.html" %}
+
+{% block titlepage %} 
+    لیست کنسرت ها
+{% endblock%}
+
+{% block mainContent %}
+    {% if concertlist %}
+
+    <form action="" method="GET">
+        {{ searchForm }}
+
+        <button type="submit" class="btn btn-success">جستجو</button>
+    </form>
+
+        {% for concert in concertlist %}
+           
+            <div class="col-md-2">
+                <a href="/ticketSales/concert/{{ concert.id }}">
+                    <div class="imageBox">
+                        <img src="{{ concert.Poster.url }}">
+                        {{ concert  }}
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+{% endblock%}
+
+
+
+
+        {% comment %} {% load static %}
+         <!DOCTYPE html>
+             <html lang="en" dir="rtl">
+          <head>
+             <title>سامانه فروش بیلط کنسرت ها</title>
+             <link rel="stylesheet" type="text/css" href="{% static 'ticketSales/css/bootstrap.css' %}" >
+             <link rel="stylesheet" type="text/css" href="{% static 'ticketSales/css/fontawesome.css' %}" >
+             <link rel="stylesheet" type="text/css" href="{% static 'ticketSales/css/style.css' %}" >
+          </head>
+            <body> {% endcomment %}
+
+             {% comment %} <h1>لیست کنسرت ها</h1>
+             <ul>
+                  {% if concertlist%}
+                    <p> تعداد کنسرت های موجود: {{concertcount}} </p>
+                      {%for concert in concertlist %}
+                      <li>
+                             {{concert}}
+                      </li>
+                      {% endfor%}
+                  {% endif %}
+            </ul> {% endcomment %}
+
+                {% comment %} <div class="container">
+                    <div class="row box">
+
+                        <h1> لیست کنسرت ها </h1>
+                        <ul class="btnul">
+                             <li><a class="btn btn-success">پروفایل</a></li>
+                             <li><a class="btn btn-success">صفحه اصلی</a></li>
+                        </ul>
+                    </div> {% endcomment %}
+
+                    {% comment %} <div class="row">
+                         {% if concertlist %}
+                              {% for concert in concertlist %}
+                                  <div class="col-md-2">
+                                      <a>
+                                          <div class="imageBox">
+                                               
+                                                <img src="{{ concert.Poster.url }}">
+                                               {{ concert }}
+
+                                          </div>  
+                                      </a>
+                                  </div>
+                              {% endfor %}
+                          {% endif %}
+                    </div> {% endcomment %}
+
+
+
+
+        {% comment %} </body>
+       <script src="{% static 'ticketSales/js/jquery-3.6.0.min.js' %} " ></script>
+       <script src="{% static 'ticketSales/js/bootstrap.bundle.js' %} " ></script>
+       <script src="{% static 'ticketSales/js/fontawesome.js' %} " ></script>
+       <script src="{% static 'ticketSales/js/main.js' %} " ></script>
+
+
+
+       </html> {% endcomment %}

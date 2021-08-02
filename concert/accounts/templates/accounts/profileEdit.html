@@ -1,0 +1,15 @@
+{% extends "ticketSales/layout.html" %}
+
+{% block titlepage %} 
+    ویرایش پروفایل
+{% endblock%}
+
+{% block mainContent %}
+  
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ formData }}
+
+        <button type="submit" class="btn btn-success">ذخیره</button>
+    </form>
+{% endblock%}
